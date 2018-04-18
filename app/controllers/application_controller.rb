@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/songs' do
-    
+
   end
 
   post '/songs' do
@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
   '/artists'
 
   patch '/songs/:slug' do
-    
+
   end
 
   '/artists/:slug'
