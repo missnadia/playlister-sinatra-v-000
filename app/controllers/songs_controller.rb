@@ -5,6 +5,11 @@ class SongsController < ApplicationController
     erb :"/songs/index"
   end
 
+
+  get '/songs/new' do
+    erb :"/songs/new"
+  end
+
   post '/songs' do
     @song = Song.create(params[:song])
     if !params["song"]["name"].empty?
@@ -19,8 +24,6 @@ class SongsController < ApplicationController
   patch '/songs/:slug' do
 
   end
-
-  '/songs/new'
 
   '/songs/:slug/edit'
 end
