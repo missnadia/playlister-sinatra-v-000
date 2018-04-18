@@ -1,4 +1,4 @@
-class Slug::Song < ActiveRecord::Base
+class Song::Slug < ActiveRecord::Base
 
   extend Slug
   include Slug
