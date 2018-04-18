@@ -13,7 +13,12 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/songs' do
-
+    @song = Song.create(params[:song])
+    if !params["song"]["name"].empty?
+      @song.name << Song.create(name: params["song"]["name"])
+    end
+    @song.save
+      
     flash[:message] = "Successfully created song."
     redirect :"/songs/#{@song.slug}"
   end
