@@ -8,13 +8,14 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/songs' do
-
+    @songs = Song.all
+    redirect :"/songs/show"
   end
 
   post '/songs' do
 
     flash[:message] = "Successfully created song."
-    redirect "/songs/#{@song.slug}"
+    redirect :"/songs/#{@song.slug}"
   end
 
   '/genres'
