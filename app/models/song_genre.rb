@@ -1,8 +1,13 @@
 class SongGenre < ActiveRecord::Base
 
-  extend SlugMethods::ClassMethods
-  include SlugMethods::InstanceMethods
-
   belongs_to :song
   belongs_to :genre
+
+  def self.find_by_slug(slug)
+    self.all.find{ |c| c.slug == slug}
+  end
+
+  def slug
+    name.downcase.gsub(" ","-")
+  end
 end
