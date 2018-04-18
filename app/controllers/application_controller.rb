@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
       @song.name << Song.create(name: params["song"]["name"])
     end
     @song.save
-      
+
     flash[:message] = "Successfully created song."
     redirect :"/songs/#{@song.slug}"
   end
