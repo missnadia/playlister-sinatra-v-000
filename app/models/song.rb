@@ -1,7 +1,7 @@
 class Song < ActiveRecord::Base
 
-  extend Slug::ClassMethods
-  include Slug::InstanceMethods
+  extend SlugMethods::ClassMethods
+  include SlugMethods::InstanceMethods
 
   has_many :song_genres
   belongs_to :artist
